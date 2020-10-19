@@ -25,13 +25,13 @@ class Interface {
         this.nodeList.container = container;
 
         container.innerHTML += `
-        <div class="ar-interface__menu-container menu-container_left" isopened="true">
+        <div class="ar-interface__menu-container menu-container_left" isopened="false">
             <div class="menu-container__element_root css-interface-leave" f-interface="leave">
                 <i class="fa fa-chevron-circle-left" f-interface="leave"></i>
             </div>
         </div>
 
-        <div class="ar-interface__menu-container menu-container_right" menutype="system" isopened="true" style="display: flex">
+        <div class="ar-interface__menu-container menu-container_right" menutype="system" isopened="false" style="display: flex">
             <div class="menu-container__element_root" f-interface="menutoggler">
                 <i ar-button__menu_main class="fa fa-bars" f-interface="menutoggler"></i>
             </div>
@@ -43,11 +43,11 @@ class Interface {
             </div>
         </div>
         
-        <div class="ar-interface__menu-container menu-container_right" menutype="marker" isopened="true" style="display: none">
+        <div class="ar-interface__menu-container menu-container_right" menutype="marker" isopened="false" style="display: none">
             <div class="menu-container__element_root" f-interface="menutoggler">
                 <i ar-button__menu_main class="fa fa-cube" f-interface="menutoggler"></i>
             </div>
-            <div class="menu-container__element_list" isopened="true" listid="1">
+            <div class="menu-container__element_list" isopened="false" listid="1">
                 <div class="element-item_root" f-interface="menulisttoggler">
                     <i class="fa fa-cog" f-interface="menulisttoggler"></i>
                 </div> 
@@ -64,7 +64,7 @@ class Interface {
                     <i class="fa fa-redo-alt" f-interface="rotateRight"></i>
                 </div>
             </div>
-            <div class="menu-container__element_list" isopened="true" listid="2">
+            <div class="menu-container__element_list" isopened="false" listid="2">
                 <div class="element-item_root" f-interface="menulisttoggler">
                     <i class="fa fa-info-circle" f-interface="menulisttoggler"></i>
                 </div>
@@ -77,11 +77,11 @@ class Interface {
             </div>
         </div>
         
-        <div class="ar-interface__menu-container menu-container_right" menutype="markers" isopened="true" style="display: none">
+        <div class="ar-interface__menu-container menu-container_right" menutype="markers" isopened="false" style="display: none">
             <div class="menu-container__element_root" f-interface="menutoggler">
                 <i ar-button__menu_main class="fa fa-cubes" f-interface="menutoggler"></i>
             </div>
-            <div class="menu-container__element_list" isopened="true" listid="1">
+            <div class="menu-container__element_list" isopened="false" listid="1">
                 <div class="element-item_root" f-interface="menulisttoggler">
                     <i class="fa fa-cog" f-interface="menulisttoggler"></i>
                 </div>

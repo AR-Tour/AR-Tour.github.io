@@ -1,0 +1,26 @@
+/* 
+
+    COLORS:
+
+*/
+
+:root {
+    /* Primary color */
+    --ex-whiteblue: rgb(100, 171, 208);
+    --ex-lightblue: rgb(60, 157, 208);
+    --ex-blue: rgb(8, 108, 162);
+    --ex-greyblue: rgb(35, 91, 121);
+    --ex-darkblue: rgb(3, 69, 105);
+    /* Secondary color */
+    --ex-whiteviolet: rgb(123, 114, 216);
+    --ex-lightviolet: rgb(89, 76, 216);
+    --ex-violet: rgb(38, 24, 177);
+    --ex-greyviolet: rgb(55, 47, 133);
+    --ex-darkviolet: rgb(18, 8, 115);
+    /* Alternative color */
+    --ex-whitegreen: rgb(102, 226, 117);
+    --ex-lightgreen: rgb(55, 225, 75);
+    --ex-green: rgb(0, 198, 24);
+    --ex-greygreen: rgb(37, 148, 52);
+    --ex-darkgreen: rgb(0, 129, 16);
+}

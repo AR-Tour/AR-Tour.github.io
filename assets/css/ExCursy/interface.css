@@ -1,8 +1,11 @@
+/* IMPORT */
+@import "../palette.css";
+
 /* TITLE STYLE */
 
 :root {
     --interface-c-red: rgb(223, 71, 104);
-    --interface-c-blue: rgb(76, 104, 146);
+    --interface-c-blue: var(--ex-blue);
     --interface-c-white: rgb(255, 255, 255);
     --interface-c-black: rgb(0, 0, 0);
 }
