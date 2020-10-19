@@ -108,7 +108,7 @@ class Interface {
         this.nodeList.menu_markers = document.querySelector("div.ar-interface__menu-container[menutype=markers]");
 
         // Hide menu and lists of menu:
-        const prepared = ["div.menu-container__element_root[f-interface=menutoggler]", "div.element-item_root[f-interface=menulisttoggler]"]
+        const prepared = ["div.menu-container__element_root[f-interface=menutoggler]", "div.element-item_root[f-interface=menulisttoggler]"];
         var type = "container";
 
         prepared.forEach(e => {
@@ -345,69 +345,97 @@ class Interface {
     // Attributes:
     // type : str ("container" || "list")
     // el : obj (DOM element)
-    _menuToggler(type = "container", el = document.createElement()) {
+    // _menuToggler(type = "container", el = document.createElement()) {
 
+    //     // Get parent node from button (or icon):
+    //     var parentNode = el.parentNode;
+
+    //     if (parentNode.hasAttribute("isopened") == false) parentNode = parentNode.parentNode;
+
+    //     // What class we need to select:
+    //     const prepared = type == "list" ? "div.element-item" : "div.menu-container__element, div.menu-container__element_list";
+
+    //     // Get all childs:
+    //     var childs = parentNode.querySelectorAll(prepared);
+
+    //         // If "isopened" == false, but display != "none":
+    //         if (parentNode.getAttribute("isopened") == "false" && childs[0].style.display != "none") {
+    //             childs.forEach(e => {
+    //                 // Set display:
+    //                 e.style.display = "none";
+    //             });
+    //         }
+        
+    //     // Get "isopened" attribute:
+    //     const attr = parentNode.getAttribute("isopened");
+        
+    //     // Get "display" attribute:
+    //     const display = attr == "true" ? "none" : "flex";
+        
+    //     // Set "time" attribute:
+    //     const time = 200;
+
+    //     // Get "opacity" attribute:
+    //     const opacity = attr == "true" ? 1 : 0;
+
+    //     // Action:
+    //     const isOpenedCondition = attr == "true" ? "false" : "true";
+        
+    //     // Edit each element:
+    //     childs.forEach(e => {
+
+    //         // Set primary opacity:
+    //         e.style.opacity = opacity;
+            
+    //         // Hide or show (display) (none | flex):
+    //         if (display == "flex") e.style.display = display;
+
+    //         // Animation of opacity:
+    //         e.animate([
+    //             {opacity: opacity},
+
+    //             {opacity: (opacity == 0 ? 1 : 0)}
+
+    //         ], time);
+
+    //         // Timeout (when animation ended):
+    //         setTimeout(() => {
+    //             e.style.opacity = (opacity == 0 ? 1 : 0);
+
+    //             if (display == "none") e.style.display = display;
+
+    //         }, time);
+    //     });
+        
+    //     // Set new condition:
+    //     parentNode.setAttribute("isopened", isOpenedCondition);
+    // }
+
+    _menuToggler(type = "container", el = document.createElement()) {
+        
         // Get parent node from button (or icon):
         var parentNode = el.parentNode;
 
         if (parentNode.hasAttribute("isopened") == false) parentNode = parentNode.parentNode;
-
+        
         // What class we need to select:
         const prepared = type == "list" ? "div.element-item" : "div.menu-container__element, div.menu-container__element_list";
 
         // Get all childs:
         var childs = parentNode.querySelectorAll(prepared);
 
-            // If "isopened" == false, but display != "none":
-            if (parentNode.getAttribute("isopened") == "false" && childs[0].style.display != "none") {
-                childs.forEach(e => {
-                    // Set display:
-                    e.style.display = "none";
-                });
-            }
-        
-        // Get "isopened" attribute:
-        const attr = parentNode.getAttribute("isopened");
-        
-        // Get "display" attribute:
-        const display = attr == "true" ? "none" : "flex";
-        
-        // Set "time" attribute:
-        const time = 200;
+        const condition = parentNode.getAttribute("isopened");
 
-        // Get "opacity" attribute:
-        const opacity = attr == "true" ? 1 : 0;
+        const isOpenedCondition = condition == "true" ? "false" : "true";
 
-        // Action:
-        const isOpenedCondition = attr == "true" ? "false" : "true";
-        
-        // Edit each element:
-        childs.forEach(e => {
+        var display = "flex";
 
-            // Set primary opacity:
-            e.style.opacity = opacity;
-            
-            // Hide or show (display) (none | flex):
-            if (display == "flex") e.style.display = display;
+        if (condition == "true") display = "none";
 
-            // Animation of opacity:
-            e.animate([
-                {opacity: opacity},
-
-                {opacity: (opacity == 0 ? 1 : 0)}
-
-            ], time);
-
-            // Timeout (when animation ended):
-            setTimeout(() => {
-                e.style.opacity = (opacity == 0 ? 1 : 0);
-
-                if (display == "none") e.style.display = display;
-
-            }, time);
+        childs.forEach(el => {
+            el.style.display = display;
         });
-        
-        // Set new condition:
+
         parentNode.setAttribute("isopened", isOpenedCondition);
     }
 }
