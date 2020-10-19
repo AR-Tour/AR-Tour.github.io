@@ -214,6 +214,12 @@ class Interface {
 
         console.log(inf_container);
     }
+
+    // Hide loader method:
+    hideLoader() {
+        document.querySelector(".ar-loader").style.display = "none";
+        return 1;
+    }
  
     // EVENTS:
 

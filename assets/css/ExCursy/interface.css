@@ -142,6 +142,25 @@
     color: var(--interface-c-white);
 }
 
+/* Loader: */
+
+.ar-loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .arjs-loader__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+} */
+
 /* Some general classes: */
 
 .ar-menu_invisible {
