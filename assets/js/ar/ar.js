@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Receive markers:
     _webController.downloadMarkers(() => {
+
+        // Hide loader:
+        _interface.hideLoader();
+
         // Create scene with received markers:
         _sceneController.scene("create", _webController.markersdata.value);
     });
