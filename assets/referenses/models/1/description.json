@@ -1,0 +1,32 @@
+{
+    "id": 1,
+    "info": {
+        "title": "VR headset demo",
+        "description": "Вторая демо - модель нашего проекта",
+        "published": "11.09.2020 13:57:00"
+    },
+    "config": {
+        "type": "custom",
+        "smooth": false,
+        "fadeIn": true,
+        "patt_url": "assets/referenses/markers/1.patt",
+        "model_url": "assets/referenses/models/1/1.gltf",
+        "scale": "0.5 0.5 0.5",
+        "rotation": "-90 0 0",
+        "position": "0 -0.5 0"
+    },
+    "childNodes": [
+        {
+            "tag": "a-light",
+            "type": "ambient",
+            "insensity": "4",
+            "position": "0 0 0"
+        },
+        {
+            "tag": "a-light",
+            "type": "point",
+            "insensity": "1",
+            "position": "0 0 -1.2"
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+/* TITLE STYLE */
+
+:root {
+    --interface-c-red: rgb(223, 71, 104);
+    --interface-c-blue: rgb(76, 104, 146);
+    --interface-c-white: rgb(255, 255, 255);
+    --interface-c-black: rgb(0, 0, 0);
+}
+
+.css-interface-leave {
+    color: var(--interface-c-red) !important;
+}
+.css-interface-leave:hover {
+    background: var(--interface-c-red) !important;
+    color: var(--interface-c-white) !important;
+    transition: all .2s ease-in !important;
+}
+
+/* BADGES: */
+  
+    .badge {
+        display: inline-block;
+        min-width: 1em; /* em unit */
+        padding: .32em; /* em unit */
+        border-radius: 15px;
+        text-align: center;
+        background: var(--interface-c-blue);
+        color: var(--interface-c-white);
+    }
+  
+
+.ar-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+.ar-title__box {
+    background: white;
+    text-align: center;
+    padding: 5px 25px 5px 25px;
+    min-width: 100px;
+    width: auto;
+    font-family: sans-serif;
+    border-radius: 25px;
+}
+.ar-title h2 {
+    font-size: 2.7vh !important;
+}
+.ar-title__title {
+    padding: 0px;
+}
+
+/* INTERFACE STYLE */
+
+.ar-interface {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - 10px);
+    min-height: 50px;
+    padding: 10px;
+    padding-bottom: 0px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* INTERFACE BUTTON: */
+
+    .menu-container__element, .element-item, .element-item_root, .menu-container__element_root {
+        background: white;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        margin: 0px 10px 10px 10px;
+        transition: all .2s ease-in;
+    }
+
+
+.ar-interface__menu-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.menu-container_left {flex-direction: row;}
+.menu-container_right {flex-direction: row-reverse;}
+.menu-container_right .menu-container__element_root {margin-right: 0px;}
+
+.menu-container__element {color: var(--interface-c-black);}
+.menu-container__element:hover {
+    background: var(--interface-c-black) !important;
+    color: var(--interface-c-white) !important;
+}
+
+.menu-container__element_list {
+    display: flex;
+    min-width: 50px;
+    min-height: 50px;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.element-item {
+    min-height: 50px;
+    margin: 0px 10px 15px 10px;
+    color: var(--interface-c-black);
+}
+.element-item:hover {
+    transition: all .2s ease-out;
+    background: var(--interface-c-black);
+    color: var(--interface-c-white);
+}
+
+.element-item_root, .menu-container__element_root {
+    min-height: 50px;
+    color: var(--interface-c-blue);
+}
+.element-item_root:hover, .menu-container__element_root:hover {
+    transition: all .2s ease-out;
+    background: var(--interface-c-blue);
+    color: var(--interface-c-white);
+}
+
+/* Some general classes: */
+
+.ar-menu_invisible {
+    visibility: hidden;
+}
