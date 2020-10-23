@@ -88,29 +88,35 @@ class SceneController {
     }
     
     _buildArObjects(container) {
-        
+
+        // Init prepared markers:
         var res = "";
 
         container.markers.forEach(el => {
+
+            switch (el.config.type) {
+                case "model":
+                    res += this._buildArObjects_model(el);
+                    break;
+            
+                default:
+                    res += `<a-marker title="Marker Undefined (${el.id})"></a-marker>`
+            }
+
+
             console.log(el.childnodes);
 
             let light_res = "";
 
-            el.childnodes.forEach(l => {
-                light_res += `
-                    <${l.tag}
-                    
-                    u_id="${l.u_id}",
-                    m_id="${l.id}",
-                    position="${l.position_x} ${l.position_y} ${l.position_z}",
-                    type="${l.type}",
-                    insensity="${l.insensity}"
+        });
 
-                    ></${l.tag}>
-                `;
-            });
+        return res;
+    }
 
-            res += `
+    // Build root frame:
+
+        _buildRootFrame(el, custom_value) {
+            return `
             <a-marker title="${el.info.title}" m_id="${el.id}" m_type="${el.config.type}" type='pattern' url="${el.config.pattern_link}" eventsmarker>
 
                 <div class="ar-info-container" m_id="${el.id}">
@@ -133,11 +139,11 @@ class SceneController {
                         
                         >
 
-                            <!-- Finally goes model (ID : 3) -->
+                            <!-- Finally goes model or sth else (ID : 3) -->
                             <a-entity gltf-model="${el.config.model_link}">
 
                                 <!-- Light could be here, I don't sure of using it -->
-                                ${light_res}
+                                ${extended_from_model}
                                 
                             </a-entity>
 
@@ -147,9 +153,49 @@ class SceneController {
                 </a-entity>
             </a-marker>
             `;
+        }
+
+    // Build models, graphics, something else with functions:
+
+        _buildArObjects_model(el) {
+            
+            let extended_from_model = this._buildArElementFromTag(el.childnodes);
+
+            if (extended_from_model == 0) console.error("Marker build Error!", el);
+
+
+
+        }
+    
+    // Build extended elements from tags:
+
+    _buildArElementFromTag(container) {
+        var prepared = "";
+
+        container.forEach(el => {
+
+            switch (el.tag) {
+                case "a-light":
+
+                    prepared += `
+                    <${el.tag}
+                    
+                    u_id="${el.u_id}",
+                    m_id="${el.id}",
+                    position="${el.position_x} ${el.position_y} ${el.position_z}",
+                    type="${el.type}",
+                    insensity="${el.insensity}"
+
+                    ></${el.tag}>
+                    `;
+                    
+                break;
+
+
+                
+                default:
+                    return 0;
+            }
         });
-
-        return res;
     }
-
 }
