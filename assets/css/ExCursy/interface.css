@@ -153,13 +153,10 @@
     align-items: center;
     justify-content: center;
 }
-
-/* .arjs-loader__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-} */
+.ar-loader>img {
+    max-width: 200px;
+    max-height: 200px;
+}
 
 /* Some general classes: */
 

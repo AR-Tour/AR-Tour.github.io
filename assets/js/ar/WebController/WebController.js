@@ -1,6 +1,5 @@
 class WebController {
-    
-    constructor(init_now = true, api_url = "https://snagix.ru/api/ExKyrsia/api.php") {
+    constructor(init_now = true, api_url = "https://snagix.ru/api/ExCursy/api.php") {
         if (init_now) this.init(api_url);
     }
     
