@@ -5,9 +5,9 @@ class SceneController {
         config = {
             sourceType: "webcam",
             debugUIEnabled: false,
-            detectionMode: "color_and_matrix",
+            detectionMode: "matrix",
             trackingMethod: "best",
-            matrixCodeType: "4x4",
+            matrixCodeType: "3x3",
             sourceWidth: 1280,
             sourceHeight: 960,
             displayWidth: 1280,
@@ -19,6 +19,9 @@ class SceneController {
             body: document.querySelector("body"),
             config: config
         }
+
+        // Functions to build different models:
+        this.ModelBuilder = new ModelBuilder();
 
     }
 
@@ -42,7 +45,9 @@ class SceneController {
         const a_videos = document.getElementsByTagName("video");
         if (a_videos.length > 1) this._delete(a_videos);
 
-        const objects = this._buildArObjects(content);
+        // const objects = this._buildArObjects(content);
+
+        const objects = this.ModelBuilder.build(content);
 
         var scene = `
         <a-scene 
@@ -96,7 +101,11 @@ class SceneController {
 
             switch (el.config.type) {
                 case "model":
-                    res += this._buildArObjects_model(el);
+                    res += this.ModelBuilder.model(el);
+                    break;
+
+                case "employees":
+                    res += this.ModelBuilder.employees(el);
                     break;
             
                 default:
@@ -142,7 +151,7 @@ class SceneController {
                             <!-- Finally goes model or sth else (ID : 3) -->
                             <a-entity gltf-model="${el.config.model_link}">
 
-                                <!-- Light could be here, I don't sure of using it -->
+                                <!-- Light could be here -->
                                 ${extended_from_model}
                                 
                             </a-entity>
