@@ -1023,7 +1023,7 @@ padding-left:0;
 }
 .icon-plain-medium.rightline {
 	margin: 0px 20px 50px 0px;
-	border-right: 1px solid #FFC153;
+	border-right: 1px solid var(--ex-blue);
 }
 .icon-plain-small.dark {
 	color: #242424;
@@ -1953,7 +1953,7 @@ a.read-more.primary:hover {
 }
 .tags li a:hover, .tags li a.active {
 	color: #fff;
-	background-color: #dbdc33;
+	background-color: var(--ex-blue);
 }
 
 .tags.two li a {
@@ -1963,8 +1963,8 @@ a.read-more.primary:hover {
 }
 .tags.two li a:hover, .tags.two li a.active {
 	color: #fff;
-	background-color: #42d1aa;
-	border:1px solid #42d1aa;
+	background-color: var(--ex-blue);
+	border:1px solid var(--ex-blue);
 }
 
 /*tags 2
