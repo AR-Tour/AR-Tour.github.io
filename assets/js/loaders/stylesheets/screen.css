@@ -68,7 +68,7 @@
 .loader-item.style2 {
   width: 40px;
   height: 40px;
-  background-color: #f51e46;
+  background-color:  rgb(35, 91, 121);
   -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
 }
@@ -83,7 +83,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #f51e46;
+  background-color:  rgb(35, 91, 121);
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -101,7 +101,7 @@
   display: inline-block;
   height: 35px;
   width: 10px;
-  background-color: #f51e46;
+  background-color:  rgb(35, 91, 121);
   border-radius: 2px;
   margin: 2px;
   animation-fill-mode: both;
@@ -134,7 +134,7 @@
 }
 /* line 127, ../sass/screen.scss */
 .loader-item.style4 .cube1, .loader-item.style4 .cube2 {
-  background-color: #f51e46;
+  background-color:  rgb(35, 91, 121);
   width: 15px;
   height: 15px;
   position: absolute;
@@ -157,7 +157,7 @@
 .loader-item.style5 > div {
   width: 18px;
   height: 18px;
-  background-color: #f51e46;
+  background-color:  rgb(35, 91, 121);
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -182,7 +182,7 @@
 .loader-item.style6 .sk-cube {
   width: 33%;
   height: 33%;
-  background-color: #f51e46;
+  background-color: rgb(35, 91, 121);
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
