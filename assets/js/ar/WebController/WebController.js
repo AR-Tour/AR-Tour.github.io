@@ -1,5 +1,7 @@
 class WebController {
-    constructor(init_now = true, api_url = "https://snagix.ru/api/ExCursy/api.php") {
+    // https://localhost/ExCursy/api/api.php
+    // https://snagix.ru/api/ExCursy/api.php
+    constructor(init_now = true, api_url = "https://localhost/ExCursy/api/api.php") {
         if (init_now) this.init(api_url);
     }
     
@@ -14,7 +16,7 @@ class WebController {
     downloadMarkers(callback) {
         let xhr = new XMLHttpRequest();
 
-        xhr.open("GET", this.api_url+"?type=get_all_markers");
+        xhr.open("GET", this.api_url+"?type=all_markers");
 
         xhr.responseType = 'json';
         
