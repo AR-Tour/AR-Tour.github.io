@@ -47,7 +47,17 @@ class SceneController {
 
         // const objects = this._buildArObjects(content);
 
-        const objects = this.ModelBuilder.build(content);
+        // const objects = this.ModelBuilder.build(content);
+
+        content.module.forEach(el => {
+            import render from `../modules/${el.general.config.type}Module.js`;
+
+            let module = render();
+        });
+
+        const objects = "123";
+
+        console.log(content);
 
         var scene = `
         <a-scene 
@@ -111,9 +121,6 @@ class SceneController {
                 default:
                     res += `<a-marker title="Marker Undefined (${el.id})"></a-marker>`
             }
-
-
-            console.log(el.childnodes);
 
             let light_res = "";
 
