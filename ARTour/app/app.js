@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const config = {
             path: "./modules",
             // url: "https://localhost/ExCursy/api/api.php",
-            url: "https://artour.snagix.ru/api/",
+            url: "https://artour.snagix.ru/api/api.php",
             scene: {
                 sourceType: "webcam",
                 debugUIEnabled: false,
