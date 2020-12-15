@@ -4,6 +4,7 @@ export function build(config, container, callback) {
         config = {
             sourceType: "webcam",
             debugUIEnabled: false,
+            detectionMode: "color_and_matrix",
             trackingMethod: "best",
             matrixCodeType: "3x3",
             sourceWidth: 1280,
@@ -22,6 +23,7 @@ export function build(config, container, callback) {
             arjs="
                 sourceType: ${config.sourceType};
                 debugUIEnabled: ${config.debugUIEnabled};
+                detectionMode: ${config.detectionMode};
                 trackingMethod: ${config.trackingMethod};
                 matrixCodeType: ${config.matrixCodeType};
                 sourceWidth: ${config.sourceWidth};

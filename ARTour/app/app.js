@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
             scene: {
                 sourceType: "webcam",
                 debugUIEnabled: false,
+                detectionMode: "color_and_matrix",
                 trackingMethod: "best",
-                matrixCodeType: "3x3",
+                matrixCodeType: "4x4",
                 sourceWidth: 1280,
                 sourceHeight: 960,
                 displayWidth: 1280,
