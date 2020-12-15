@@ -5,6 +5,9 @@ export var data = {
     },
     user: {
         location: {}
+    },
+    marker_modules: {
+        
     }
 }
 
