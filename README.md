@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/ExCursy/ExCursy.github.io/main/assets/images/Github/ARTour_api.png)
+![](https://raw.githubusercontent.com/ExCursy/ExCursy.github.io/main/assets/images/Github/FHD_Logo-Decorated_Light.png)
 
 # What does this project about
 
