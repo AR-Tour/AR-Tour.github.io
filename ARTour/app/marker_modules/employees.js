@@ -1,3 +1,7 @@
+var config = {
+    font_directory: "https://ar-tour.github.io/ARTour/assets/Fonts/"
+};
+
 export function render(data) {
     var res = `
     <a-light
@@ -49,7 +53,7 @@ export function render(data) {
                     side="double"
                     value="${el.name}"
                     width="1.5"
-                    font="./assets/fonts/${data.config.font}/${data.config.font}_Black.fnt"
+                    font="${config.font_directory}${data.config.font}/${data.config.font}_Black.fnt"
                     position="-0.57 0.25 0.03"
                     m_class="title"
                 ></a-text>
@@ -59,7 +63,7 @@ export function render(data) {
                     side="double"
                     value="${el.role}"
                     width="1.2"
-                    font="./assets/fonts/${data.config.font}/${data.config.font}_Medium.fnt"
+                    font="${config.font_directory}${data.config.font}/${data.config.font}_Medium.fnt"
                     position="-0.57 0.18 0.03"
                     m_class="role"
                 ></a-text>
@@ -69,7 +73,7 @@ export function render(data) {
                     side="double"
                     value="${el.total_exp_age}"
                     width="2.7"
-                    font="./assets/fonts/${data.config.font}/${data.config.font}_Medium.fnt"
+                    font="${config.font_directory}${data.config.font}/${data.config.font}_Medium.fnt"
                     position="-0.57 0.08 0.03"
                     m_class="exp_num"
                 ></a-text>
@@ -79,7 +83,7 @@ export function render(data) {
                     side="double"
                     value="Всего стаж работы"
                     width="1.2"
-                    font="./assets/fonts/${data.config.font}/${data.config.font}_Medium.fnt"
+                    font="${config.font_directory}${data.config.font}/${data.config.font}_Medium.fnt"
                     position="-0.57 0 0.03"
                     m_class="exp_title"
                 ></a-text>
@@ -89,7 +93,7 @@ export function render(data) {
                     side="double"
                     value="${el.current_exp_age}"
                     width="2.7"
-                    font="./assets/fonts/${data.config.font}/${data.config.font}_Medium.fnt"
+                    font="${config.font_directory}${data.config.font}/${data.config.font}_Medium.fnt"
                     position="-0.57 -0.1 0.03"
                     m_class="exp_num_2"
                 ></a-text>
@@ -99,7 +103,7 @@ export function render(data) {
                     side="double"
                     value="Стаж работы здесь"
                     width="1.2"
-                    font="./assets/fonts/${data.config.font}/${data.config.font}_Medium.fnt"
+                    font="${config.font_directory}${data.config.font}/${data.config.font}_Medium.fnt"
                     position="-0.57 -0.2 0.03"
                     m_class="exp_title_2"
                 ></a-text>
