@@ -2,4 +2,4 @@
 
 # What does this project about
 
-ARTour project is a new vector of WebAR improving. The main idea is about making ar (WebAR) more available for other people, to use it everywhere: business, education, entertaiment etc.
+ARTour project is a new vector of WebAR improving. The main idea is about making ar (WebAR) more available for other people, to use it everywhere: business, education, entertaiment etc. All markers keeps in servers and loads dynamically while you are scanning.
