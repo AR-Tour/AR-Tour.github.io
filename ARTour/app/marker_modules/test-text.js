@@ -14,10 +14,10 @@ export function render(data) {
     <a-entity
         geometry="
             primitive: plane; 
-            width: ${(0.27 / 2) * data.text.length};
+            width: ${0.135 * data.text.length};
             height: 0.4;
             castShadow:true;
-        " 
+        "
         animation__position="
             property: position; 
             to: 0 0.4 0;
