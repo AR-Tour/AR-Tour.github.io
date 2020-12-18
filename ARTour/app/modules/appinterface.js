@@ -83,10 +83,10 @@ export function drawInterface() {
                     <i class="fa fa-search-minus" f-interface="zoomout"></i>
                 </div>
                 <div class="element-item" f-interface="rotateleft">
-                    <i class="fa fa-undo" f-interface="rotateLeft"></i>
+                    <i class="fa fa-undo" f-interface="rotateleft"></i>
                 </div>
                 <div class="element-item" f-interface="rotateright">
-                    <i class="fa fa-redo-alt" f-interface="rotateRight"></i>
+                    <i class="fa fa-redo-alt" f-interface="rotateright"></i>
                 </div>
             </div>
         </div>
