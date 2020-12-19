@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const markers = await import(config.path + "/markers.js");
         const appinterface = await import(config.path + "/appinterface.js");
 
+        var data = await import(config.path + "/data.js");
+
         events.init();
         appinterface.init();
         // geolocation.watch();
@@ -37,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         requests.first(config.url, res => {
             scene.build(config.scene, document.querySelector("body"), () => {
                 return markers.build(res);
+            }, () => {
+                return markers.buildAssets(res);
             });
         });
     }

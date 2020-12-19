@@ -14,7 +14,7 @@ export function render(data) {
     <a-entity
         geometry="
             primitive: plane; 
-            width: ${0.135 * data.text.length};
+            width: ${0.135 * data.response.text.length};
             height: 0.4;
             castShadow:true;
         "
@@ -45,9 +45,9 @@ export function render(data) {
         align="center"
         color="#000000"
         side="double"
-        value="${data.text}"
+        value="${data.response.text}"
         width="5"
-        font="${config.font_directory}${data.config.font}/${data.config.font}_Medium.fnt"
+        font="${config.font_directory}${data.response.config.font}/${data.response.config.font}_Medium.fnt"
         position="0 0 0"
         rotation="-90 0 0"
         m_class="test-text__text"
