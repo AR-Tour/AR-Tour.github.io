@@ -8,7 +8,7 @@ export function render(data) {
     var token = crypto.token(8);
 
     $data.data.dom.assets.querySelector(`a-entity[m_id="${data.details.marker_id}"]`).innerHTML 
-        += `<video id="video__video_${token}" src="${video.link}" autoplay="true" loop="true" />`;
+        += `<video id="video__video_${token}" src="${video.link}" autoplay="true" loop="true" crossorigin="anonymous" />`;
 
     var res = `
         <a-video
