@@ -45,7 +45,6 @@ export function build(xhr) {
 function buildFrame(data) {
     // console.log($data.data.dom.assets);
     // $data.data.dom.assets.innerHTML += `<a-entity m_id="${data.id}"></a-entity>`
-
     return `
         <a-marker 
             title="${data.info.title}"
@@ -56,6 +55,7 @@ function buildFrame(data) {
             loaded="0"
             url="${data.pattern}"
             module="${data.module}"
+            smooth="${data.config.smooth == 1 ? true : false}"
             eventsmarker
         > ${firstEntity(data.config)} </a-marker>
     `;
@@ -213,7 +213,7 @@ export function rotate(markers, deg) {
             const lastRotation = entity.getAttribute("rotation");
             entity.setAttribute("animation__rotation", `
                 property: rotation;
-                to: 0 ${deg + lastRotation.y} 0;
+                to: ${lastRotation.x} ${deg + lastRotation.y} ${lastRotation.z};
                 dur: ${config.rotate.animation.duration};
                 easing: easeInOutQuad;
                 loop: false;
