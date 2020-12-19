@@ -25,15 +25,14 @@ export function init() {
                 data.DOMArray(data.data.markers, marker, "add");
 
                 // SET MENU TYPE
-
                 data.data.markers.length > 1 ? appinterface.setMenu("markers") : appinterface.setMenu("marker");
             });
 
             marker.addEventListener('markerLost', e => {
+
                 data.DOMArray(data.data.markers, marker, "remove");
 
                 // SET MENU TYPE
-
                 data.data.markers.length == 0 ? appinterface.setMenu("system") : appinterface.setMenu("marker");
             });
         }

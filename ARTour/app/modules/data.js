@@ -1,7 +1,8 @@
 export var data = {
     markers: [],
     dom: {
-        body: document.querySelector("body")
+        body: document.querySelector("body"),
+        assets: null
     },
     user: {
         location: {}
