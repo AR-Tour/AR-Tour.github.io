@@ -1,4 +1,9 @@
-export function build(config, container, callback) {
+import * as data from "./data.js";
+import * as crypto from "./crypto.js";
+
+export function build(config, container, callback, secondcallback) {
+
+    var token = crypto.token(8);
 
     if (typeof config == "undefined") {
         config = {
@@ -20,6 +25,7 @@ export function build(config, container, callback) {
     container.innerHTML += `
         <a-scene 
             vr-mode-ui="false"
+            token="${token}"
             arjs="
                 sourceType: ${config.sourceType};
                 debugUIEnabled: ${config.debugUIEnabled};
@@ -36,10 +42,18 @@ export function build(config, container, callback) {
             ${config.embedded}
             ${config.stats}
         >
-        ${callback(this)}
-        <a-entity camera></a-entity>
+            ${callback(this)}
+            <a-assets
+
+            >
+            ${secondcallback(this)}
+            </a-assets>
+            <a-entity camera></a-entity>
         </a-scene>
     `;
+
+        // Create container in "data -> data -> dom -> assets"
+        data.data.dom.assets = document.querySelector(`a-scene > a-assets`);
 }
 
 export function destroy() {

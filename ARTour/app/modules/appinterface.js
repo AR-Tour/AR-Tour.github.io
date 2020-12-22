@@ -51,11 +51,11 @@ export function drawInterface() {
                 <div class="element-item" f-interface="zoomout">
                     <i class="fa fa-search-minus" f-interface="zoomout"></i>
                 </div>
-                <div class="element-item" f-interface="rotateLeft">
-                    <i class="fa fa-undo" f-interface="rotateLeft"></i>
+                <div class="element-item" f-interface="rotateleft">
+                    <i class="fa fa-undo" f-interface="rotateleft"></i>
                 </div>
-                <div class="element-item" f-interface="rotateRight">
-                    <i class="fa fa-redo-alt" f-interface="rotateRight"></i>
+                <div class="element-item" f-interface="rotateright">
+                    <i class="fa fa-redo-alt" f-interface="rotateright"></i>
                 </div>
             </div>
             <div class="menu-container__element_list" isopened="false" listid="2">
@@ -82,11 +82,11 @@ export function drawInterface() {
                 <div class="element-item" f-interface="zoomout">
                     <i class="fa fa-search-minus" f-interface="zoomout"></i>
                 </div>
-                <div class="element-item" f-interface="rotateLeft">
-                    <i class="fa fa-undo" f-interface="rotateLeft"></i>
+                <div class="element-item" f-interface="rotateleft">
+                    <i class="fa fa-undo" f-interface="rotateleft"></i>
                 </div>
-                <div class="element-item" f-interface="rotateRight">
-                    <i class="fa fa-redo-alt" f-interface="rotateRight"></i>
+                <div class="element-item" f-interface="rotateright">
+                    <i class="fa fa-redo-alt" f-interface="rotateright"></i>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 export function render(data) {
     var res = "";
 
-    data.forEach(el => {
+    data.response.forEach(el => {
         res += `
         <a-entity 
             gltf-model="${el.link}"

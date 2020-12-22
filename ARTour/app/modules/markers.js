@@ -1,4 +1,5 @@
 import * as appinterface from "./appinterface.js";
+import * as $data from "./data.js";
 
 // CONFIG
 
@@ -33,13 +34,17 @@ var config = {
 
 export function build(xhr) {
     const response = xhr.response.response;
-    var res = "";
+    var res = ``;
 
-    response.forEach(el => { res += buildFrame(el); });
+    response.forEach(el => {
+        res += buildFrame(el);
+    });
     return res;
 }
 
 function buildFrame(data) {
+    // console.log($data.data.dom.assets);
+    // $data.data.dom.assets.innerHTML += `<a-entity m_id="${data.id}"></a-entity>`
     return `
         <a-marker 
             title="${data.info.title}"
@@ -50,6 +55,7 @@ function buildFrame(data) {
             loaded="0"
             url="${data.pattern}"
             module="${data.module}"
+            smooth="${data.config.smooth == 1 ? true : false}"
             eventsmarker
         > ${firstEntity(data.config)} </a-marker>
     `;
@@ -68,14 +74,27 @@ function firstEntity(data) {
     `;
 }
 
+export function buildAssets(xhr) {
+    const response = xhr.response.response;
+    var res = ``;
+
+    response.forEach(el => {
+        res += buildAsset(el);
+    });
+    return res;
+}
+
+function buildAsset(data) {
+    return `<a-entity m_id="${data.id}"></a-entity>`;
+}
+
 // SECOND LAYER
 
 export function buildMarker(xhr, container) {
     console.log(xhr);
     var insert = document.querySelector(`a-marker[m_id=\"${xhr.response.details.marker_id}\"] > a-entity`);
     import(`../marker_modules/${xhr.response.details.module_name}.js`).then(module => {
-        const render = module.render(xhr.response.response);
-
+        const render = module.render(xhr.response);
         // FADE OUT SYSTEM MODEL
         fadeOutSystemModels("loading", 400).then(e => {
             setTimeout(() => {
@@ -194,7 +213,7 @@ export function rotate(markers, deg) {
             const lastRotation = entity.getAttribute("rotation");
             entity.setAttribute("animation__rotation", `
                 property: rotation;
-                to: 0 ${deg + lastRotation.y} 0;
+                to: ${lastRotation.x} ${deg + lastRotation.y} ${lastRotation.z};
                 dur: ${config.rotate.animation.duration};
                 easing: easeInOutQuad;
                 loop: false;
